@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: backend
-          image: chuthanh/dockerfile-backend:27
+          image: chuthanh/dockerfile-backend:8
           imagePullPolicy: Always
           ports:
             - containerPort: 8080
