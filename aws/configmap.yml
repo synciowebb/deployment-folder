@@ -3,4 +3,15 @@ kind: ConfigMap
 metadata:
   name: configmap
 data:
-  backend_url: jdbc:mysql://mysql-db-instance.czasguw2y4t8.ap-southeast-1.rds.amazonaws.com:3306/synciowebapp
+  backend_url: jdbc:mysql://vietnam.mysql.database.azure.com:3306/synciowebapp
+  config.json: |
+    {
+        "host": "localhost",
+        "port": 8111,
+        "domain": "example.com",
+        "rabbitmq_url": "amqps://rupzqjkv:3lURY4BnsU1PR_RvC67MIk92g0_iG1y9@armadillo.rmq.cloudamqp.com/rupzqjkv",
+        "exchange": "imageVerificationExchange",
+        "queu_image_verify": "imageVerificationQueue",
+        "TELEGRAM_TOKEN": "6478734755:AAHwesjyBmtIVaQsYafxvqGKeWldDbwPrg0",
+        "TELEGRAM_CHAT_ID": "6498678908"
+    }

@@ -1,0 +1,17 @@
+# apiVersion: v1
+# kind: ConfigMap
+# metadata:
+#   name: syncio-config
+#   namespace: default
+# data:
+#   config.json: |
+#     {
+#         "host": "http://k8s-default-awsingre-9aa4c55379-852935214.ap-southeast-1.elb.amazonaws.com",
+#         "port": 8111,
+#         "domain": "example.com",
+#         "rabbitmq_url": "amqps://rupzqjkv:3lURY4BnsU1PR_RvC67MIk92g0_iG1y9@armadillo.rmq.cloudamqp.com/rupzqjkv",
+#         "exchange": "imageVerificationExchange",
+#         "queu_image_verify": "imageVerificationQueue",
+#         "TELEGRAM_TOKEN": "6478734755:AAHwesjyBmtIVaQsYafxvqGKeWldDbwPrg0",
+#         "TELEGRAM_CHAT_ID": "6498678908"
+#     }
