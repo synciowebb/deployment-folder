@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
         - name: frontend
-          image: chuthanh/dockerfile-fronted:7
+          image: chuthanh/dockerfile-fronted:6
           imagePullPolicy: Always
           ports:
             - containerPort: 80
