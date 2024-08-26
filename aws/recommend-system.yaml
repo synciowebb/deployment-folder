@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: friend-recommender
+  labels:
+    app: friend-recommender
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: friend-recommender
+  template:
+    metadata:
+      labels:
+        app: friend-recommender
+    spec:
+      containers:
+        - name: friend-recommender
+          image: chuthanh/dockerfile-recommend-system:latest
+          ports:
+            - containerPort: 5000
+
+---
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: friend-recommender
+  labels:
+    app: friend-recommender
+spec:
+  selector:
+    app: friend-recommender
+  ports:
+    - protocol: TCP
+      port: 5000
+      targetPort: 5000
+  type: ClusterIP

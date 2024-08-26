@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: ai-images
+  labels:
+    app: ai-images
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ai-images
+  template:
+    metadata:
+      labels:
+        app: ai-images
+    spec:
+      containers:
+        - name: ai-images
+          image: chuthanh/fastapi-app:latest
+          ports:
+            - containerPort: 8111
+
+---
+# Service
+apiVersion: v1
+kind: Service
+metadata:
+  name: ai-images
+  labels:
+    app: ai-images
+spec:
+  selector:
+    app: ai-images
+  ports:
+    - protocol: TCP
+      port: 8111
+      targetPort: 8111
+  type: ClusterIP
